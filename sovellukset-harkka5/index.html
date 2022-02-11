@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Tietokanta</title> 
+  <link href="tyyli.css" rel="StyleSheet" type="text/css" />
+  <script type="text/javascript" src="jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="osoite.js"></script>
+</head>
+<body>
+<div>
+
+<p id="taulu">
+Tietokanta tähän
+</p>
+
+</div> 
+<form id="lomake" name="lomake">
+<fieldset>
+<legend>Lisäys</legend>
+<div>
+  <label for="jasen">Jäsen</label>
+  <select id="jasen" name="jasen">
+    <option value="1" >Tommi Lahtonen</option>
+	<option value="2" >Matti Virtanen</option>
+	<option value="3" >Petri Heinonen</option>
+	<option value="4" >Matti Meikäläinen</option>
+	<option value="5" >Maija Meikäläinen</option>
+	<option value="6" >Olli Opiskelija</option>
+	<option value="7" >Ville Vidiootti</option>
+	<option value="8" >Leila Leffafani</option>
+	<option value="9" >Matti Virtanen</option>
+  </select>
+</div>
+<div>
+  <label for="elokuva">Elokuva</label>
+  <select id="elokuva" name="elokuva">
+    <option value="1" >Zootopia</option>
+	<option value="2" >What women want</option>
+	<option value="3" >Chocolat</option>
+	<option value="4" >Ghostbusters</option>
+	<option value="5" >Deadpool</option>
+	<option value="6" >Almost Famous</option>
+	<option value="7" >La La Land</option>
+	<option value="8" >Crouching tiger</option>
+	<option value="9" >Gladiator</option>
+	<option value="10" >Traffic</option>
+	<option value="11" >Ghostbusters</option>
+	<option value="12" >Hannibal</option>
+	<option value="13" >Remember the Titans</option>
+	<option value="14" >Clockwork Orange</option>
+  </select>
+</div>
+<div>
+  <label for="vuokrauspvm">Vuokrauspvm</label>
+  <input type="date" id="vuokrauspvm" name="vuokrauspvm"/>
+</div>
+<div>
+  <label for="palautuspvm">Palautuspvm</label>
+  <input type="date" id="palautuspvm" name="palautuspvm"/>
+</div>
+<div>
+  <label for="maksettu">Maksettu</label>
+  <input type="number" id="maksettu" name="maksettu"/>
+</div>
+<div>
+<p id="virhe" class="hidden">
+Virheellinen syöte
+</p>
+</div>
+</fieldset>
+<p><input type="submit" name="laheta" id="laheta" value="Lähetä!" /></p>
+</form>
+</body>
+</html>

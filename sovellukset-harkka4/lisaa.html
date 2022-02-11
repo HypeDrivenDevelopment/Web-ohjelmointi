@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vuokraamo</title>
+  <meta charset="UTF-8"/>
+</head>
+
+<body>
+
+<h1>Lisäys</h1>
+<p>{{ ohje }}</p>
+<form action="{{request.base_url}}" method="POST">
+
+<p>
+<label>Jäsen
+<select name="jasen">
+{% for j in jasenet %}
+	<option value="{{ j['jasenid'] }}" >{{ j['jasennimi'] }}</option>
+{% endfor %}
+</select></label>
+</p>
+
+<p>
+<label>Elokuva
+<select name="elokuva">
+{% for e in elokuvat %}
+	<option value="{{ e['elokuvaid'] }}" >{{ e['elokuvanimi'] }}</option>
+{% endfor %}
+</select></label>
+</p>
+
+<p>
+<label>Vuokrauspvm<input type="date" name="vpvm" /></label>
+</p>
+
+<p>
+<label>Palautuspvm<input type="date" name="ppvm" /></label>
+</p>
+
+<p>
+<label>Maksettu<input type="number" name="maksettu" /></label>
+</p>
+
+<p><input type="submit" name="vuokraa" value="Vuokraa" /></p>
+</form>
+
+</body>
+
+</html>

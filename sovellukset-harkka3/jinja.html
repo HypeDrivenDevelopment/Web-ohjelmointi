@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="StyleSheet" href="tyylit.css" type="text/css" />
+<title>Halma</title>
+</head>
+<body>
+
+<h1>Halma</h1>
+
+<p>Kerro luotavan pelialueen koko. Ruudukko on yhtä monta ruutua
+leveä kuin korkea. </p>
+
+<form accept-charset="UTF-8" action="http://users.jyu.fi/~samipelt/cgi-bin/shakki.cgi" method="get"> 
+<fieldset>
+<p><label>Teksti <input type="text" name="teksti" /></label></p>
+<p><label>Leveys <input type="text" name="x" /></label></p><p id="virhe"> {{ virhe }} </p>
+</fieldset>
+<p><input type="submit" value="Luo" /></p>
+</form>
+
+<table>
+{% for i in taulu %}
+	<tr>
+	{% set outer_loop = loop %}
+	{% for j in taulu %}
+		{% if (outer_loop.index0 + loop.index0) % 2 == 0 %}
+			<td class="valkoinen">
+			</td>
+		{% else %}
+			{% if loop.index0 == 0 or loop.index0 == 1 or loop.index0 == 2 %}
+				<td class="musta">
+				<!-- silmukkassa katsotaan että löytyykö luotavan kuvan i ja j muuttujilla muodostettu yksilöivä arvo listasta, jos löytyy niin sitä ei luoda -->
+				{% for u in range(0, poistot|length) %}
+					{% if poistot[u] == i*100+j %}
+						{% break %}
+					{% else %}
+						{% if loop.last %}
+							<a href="{{ tallennus }}&poisto={{ i*100+j }}"><img src="red.svg" alt="red" title="red"/></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				</td>
+				
+			{% else %}
+				{% if loop.index0 == leveys-1 or loop.index0 == leveys-2 or loop.index0 == leveys-3 %}
+					<td class="musta">
+					{% for u in range(0, poistot|length) %}
+						{% if poistot[u] == i*100+j %}
+							{% break %}
+						{% else %}
+							{% if loop.last %}
+								<a href="{{ tallennus }}&poisto={{ i*100+j }}"><img src="blue.svg" alt="blue" title="blue"/></a>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					</td>
+				{% else %}
+					<td class="musta">
+					</td>
+				{% endif %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	</tr>
+{% endfor %}
+</table>
+
+<p>{{ teksti }}</p>
+
+</body>
+</html>

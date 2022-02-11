@@ -1,0 +1,24 @@
+.input{
+	float: right;
+}
+
+form fieldset > div > label {
+	display: block;
+	max-width: 100%;
+	clear: both;
+ 
+}
+
+label input {
+	float: right;
+}
+
+p {
+	clear: both;
+	max-width: 100%;
+	position: relative;
+}
+
+fieldset {
+	padding-right: 20%;
+}

@@ -1,0 +1,9 @@
+label {
+  width: 20%;
+  float: left;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vuokraamo</title>
+</head>
+
+<body>
+
+<h1>Tietokanta</h1>
+
+<ul>
+{% for p in vuokrat %}
+
+    <li>{{ p['jasennimi'] }} {{ p['elokuvanimi'] }} {{ p['vuokrauspvm'] }} {{ p['palautuspvm'] }} {{ p['maksettu'] }}</li>
+	
+{% endfor %}
+</ul>
+
+<a title="lisää" href="/~samipelt/cgi-bin/vt4/flask.cgi/lisaa"> Lisäys </a>
+
+</body>
+
+</html>

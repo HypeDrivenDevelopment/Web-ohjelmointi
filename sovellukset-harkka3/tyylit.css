@@ -1,0 +1,26 @@
+table { 
+	border-spacing: 0px;
+	border: 1px solid black;
+}
+
+td {
+	width:64px;
+	height:64px;
+}
+
+td.valkoinen{
+	background-color: white;
+}
+
+td.musta{
+	background-color: black;
+}
+
+p#virhe {
+	color: red;
+}
+
+img {
+	height: 64px;
+	width: 64px;
+}
